@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up your account</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <header class="header">
+
+        <a href="#" class="logo"><span>B</span>logs</a>
+
+        <div class="icons">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+            <i class="fas fa-search" id="search-icon"></i>
+            <i class="fas fa-moon" id="theme-btn"></i>
+            <a href="login.html"><i class="fas fa-user" id="user-btn"></i></a>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+    </header>
+
+
+    <section class="banner login-banner" id="banner">
+
+        <p>Create Your Account</p>
+
+    </section>
+
+    <section id="login">
+
+        <div class="container">
+
+            <h3> Sign-Up Here</h3>
+
+            <form action="login.html">
+
+                <label> Name </label>
+                <input type="text" placeholder="Enter your name" required>
+
+                <label> Username </label>
+                <input type="email" placeholder="Create username" required>
+
+                <label> Password </label>
+                <input type="password" placeholder="Create password" required>
+
+                <input type="submit" value="Sign-Up">
+
+                <h4>Already have account <a href="login.html"> &nbsp;Login here! </a></h4>
+
+            </form>
+        </div>
+
+    </section>
+
+    <section class="footer">
+
+        <div class="follow">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+
+        <div class="credit">created by <span>Saim Asif</span> | all rights reserved</div>
+
+    </section>
+
+
+
+    <script src="js/jquery1.js"></script>
+
+    <script>
+
+        var a = 'fas fa-moon';
+
+        $(document).ready(function () {
+            $("#theme-btn").click(function () {
+                if (a == 'fas fa-moon') {
+                    $("#theme-btn").attr("class", "fas fa-sun");
+                    $("body").css("background", "#252525");
+                    $(".header").css("background", "black");
+                    $(".header .logo").css("color", "white");
+                    $(".header .search-form").css("background", "black");
+                    $(".header .search-form #search-box").css("background", "black");
+                    $(".header .search-form #search-box").css("color", "white");
+                    $(".header .search-form label").css("color", "white");
+                    $(".header .navbar").css("background", "#333");
+                    $(".header .navbar a").css("color", "lightgray");
+                    $(".footer .credit").css("color", "white");
+                    $(".footer .follow a").css("border", "1px solid gray");
+                    a = 'fas fa-sun';
+                }
+
+                else if (a == "fas fa-sun") {
+                    $("#theme-btn").attr("class", "fas fa-moon");
+                    $("body").css("background", "white");
+                    $(".header").css("background", "white");
+                    $("header .logo").css("color", "black");
+                    $("header .navbar a").css("color", "black");
+                    $(".header .search-form").css("background", "white");
+                    $(".header .search-form #search-box").css("background", "white");
+                    $(".header .search-form #search-box").css("color", "black");
+                    $(".header .search-form label").css("color", "black");
+                    $(".header .navbar").css("background", "#efefef");
+                    $(".header .navbar a").css("color", "black");
+                    $(".footer .credit").css("color", "black");
+                    $(".footer .follow a").css("border", "1px solid transparent");
+                    a = 'fas fa-moon';
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        let searchIcon = document.querySelector('#search-icon');
+        let searchForm = document.querySelector('.search-form');
+
+        searchIcon.onclick = () => {
+            searchIcon.classList.toggle('fa-times');
+            searchForm.classList.toggle('active');
+        }
+
+        window.onscroll = () => {
+            searchIcon.classList.remove('fa-times');
+            searchForm.classList.remove('active');
+        }
+    </script>
+
+</body>
+
+</html>
